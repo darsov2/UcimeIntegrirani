@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrdersApp.Domain\OrdersApp.Domain.csproj" />
+    <ProjectReference Include="..\OrdersApp.Repository\OrdersApp.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
