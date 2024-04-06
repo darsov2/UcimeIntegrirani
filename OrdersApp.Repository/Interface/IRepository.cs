@@ -14,5 +14,6 @@ namespace OrdersApp.Repository.Interface
         T Update(T entity);
         T Delete(T entity);
         T GetById(Guid id);
+        IEnumerable<T> GetAllInclude(string include, string include1);
     }
 }

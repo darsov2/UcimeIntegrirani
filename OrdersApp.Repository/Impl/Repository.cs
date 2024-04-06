@@ -50,5 +50,10 @@ namespace OrdersApp.Repository.Impl
             _context.SaveChanges();
             return entity;
         }
+
+        public IEnumerable<T> GetAllInclude(string include, string include1)
+        {
+            return entites.Include(include).Include(include1).AsEnumerable();
+        }
     }
 }

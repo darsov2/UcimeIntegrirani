@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using OrdersApp.Domain.Models;
+
 //using OrdersApp.Web.Data;
 using OrdersApp.Repository;
 using OrdersApp.Repository.Impl;
@@ -15,14 +17,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<OrdersAppUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IMovieService, MovieService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<ITicketService, TicketService>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 var app = builder.Build();
 

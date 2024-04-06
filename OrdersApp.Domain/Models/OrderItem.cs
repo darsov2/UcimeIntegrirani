@@ -8,10 +8,12 @@ namespace OrdersApp.Domain.Models
 {
     public class OrderItem : BaseEntity
     {
-        public virtual Order Order { get; set; }
-        public Guid OrderId { get; set; }
-        public virtual Ticket Ticket { get; set; }
+        public virtual Order? Order { get; set; }
+        public Guid? OrderId { get; set; }
+        public virtual Ticket? Ticket { get; set; }
         public Guid TicketId { get; set; }
         public int Quantity { get; set; }
+        public virtual ShoppingCart? ShoppingCart { get; set; }
+        public Guid? ShoppingCartId { get; set; }
     }
 }

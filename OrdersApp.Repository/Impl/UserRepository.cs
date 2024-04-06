@@ -29,6 +29,7 @@ namespace OrdersApp.Repository.Impl
         {
             return users.Include(x => x.ShoppingCart)
                 .ThenInclude(x => x.Items)
+                .ThenInclude(x => x.Ticket)
                 .FirstOrDefault(x => x.Id.Equals(id));
         }
     }

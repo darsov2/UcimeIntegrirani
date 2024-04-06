@@ -19,6 +19,8 @@ namespace OrdersApp.Service.Interface
         OrderItem Update(OrderItem orderItem);
         OrderItem Delete(OrderItem orderItem);
         ShoppingCart GetByUserId(string userId);
-
+        void AddItemToShoppingCart(string userId, OrderItem orderItem);
+        List<OrderItem> GetShoppingCartItemsByUserId(string userId);
+        void AddItemsToOrder(string userId, ICollection<OrderItem> items);
     }
 }

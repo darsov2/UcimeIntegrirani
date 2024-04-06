@@ -9,6 +9,6 @@ namespace OrdersApp.Domain.Models
     public class Order : BaseEntity
     {
         public DateTime DateCreated { get; set; } = DateTime.UtcNow;
-        public virtual ICollection<OrderItem> Items { get; set;}
+        public virtual ICollection<OrderItem> Items { get; set; }
     }
 }
